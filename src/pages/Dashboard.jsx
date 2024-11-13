@@ -1,4 +1,3 @@
-// src/pages/Dashboard.js
 import React, { useState } from 'react';
 import ArtList from '../components/ArtList';
 import SearchBar from '../components/SearchBar';
@@ -10,13 +9,13 @@ const Dashboard = ({ arts, setArts }) => {
 
   const handleEdit = (art) => navigate(`/edit/${art.id}`, { state: { art } });
 
-  // Function to delete art by id
+
   const handleDelete = (id) => {
     const updatedArts = arts.filter((art) => art.id !== id);
-    setArts(updatedArts);  // Update the state to remove the art
+    setArts(updatedArts);  
   };
 
-  // Filter artworks based on search term
+
   const filteredArts = arts.filter(
     (art) =>
       art.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

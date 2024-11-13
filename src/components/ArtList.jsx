@@ -1,4 +1,3 @@
-// src/components/ArtList.js
 import React from 'react';
 import ArtCard from './ArtCard';
 

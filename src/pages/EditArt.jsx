@@ -1,4 +1,3 @@
-// src/components/ArtCard.js
 import React from 'react';
 
 const ArtCard = ({ art, onEdit, onDelete }) => (

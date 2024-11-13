@@ -1,4 +1,3 @@
-// src/components/ArtForm.js
 import React, { useState } from 'react';
 
 const ArtForm = ({ onSubmit, initialData = {} }) => {

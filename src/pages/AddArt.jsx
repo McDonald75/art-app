@@ -1,4 +1,3 @@
-// src/pages/AddArt.js
 import React from 'react';
 import ArtForm from '../components/ArtForm';
 import { useNavigate } from 'react-router-dom';
