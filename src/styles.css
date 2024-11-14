@@ -15,7 +15,7 @@ body {
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
   }
   
   .art-card img {
@@ -52,6 +52,7 @@ body {
   .navbar a {
     color: white;
     text-decoration: none;
+    
   }
   
   .navbar a:hover {

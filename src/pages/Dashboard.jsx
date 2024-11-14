@@ -7,14 +7,12 @@ const Dashboard = ({ arts, setArts }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const handleEdit = (art) => navigate(`/edit/${art.id}`, { state: { art } });
-
+  const handleEdit = (art) => navigate(`/edit/${art.id}`);
 
   const handleDelete = (id) => {
     const updatedArts = arts.filter((art) => art.id !== id);
-    setArts(updatedArts);  
+    setArts(updatedArts);
   };
-
 
   const filteredArts = arts.filter(
     (art) =>
