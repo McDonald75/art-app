@@ -94,7 +94,8 @@ body {
   font-size: 14px;
 }
 
-.edit-art-container h2{
+.addArt h2,
+  .edit-art-container h2{
   margin-left: 30%;
 
 }
@@ -119,5 +120,9 @@ body {
   width: 150px;
   margin-top: 50px;
 }
-
-
+.addArt h2{
+  border: 2px solid red;
+}
+.addForm{
+  border: 2px solid red;
+}

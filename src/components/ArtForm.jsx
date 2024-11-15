@@ -8,26 +8,34 @@ const ArtForm = ({ onSubmit, initialData = {} }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ name, author, price, imageLink });
+    alert()
   };
 
   return (
-    <form onSubmit={handleSubmit} className="container">
+    <form onSubmit={handleSubmit} className="">
       <div>
-        <label>Name</label>
+        <div>
+          <p>Name</p>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        </div>
       </div>
       <div>
-        <label>Author</label>
+        <div>
+          <p>Author</p>
         <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} required />
+        </div>
       </div>
       <div>
-        <label>Price</label>
+        <div>
+          <p>Price</p>
         <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} required />
+        </div>
       </div>
       <div>
-        <label>Image Link</label>
+        <div>
+          <p>Image Link</p>
         <input type="text" value={imageLink} onChange={(e) => setImageLink(e.target.value)} required />
+        </div>
       </div>
       <button type="submit">Save Art</button>
     </form>

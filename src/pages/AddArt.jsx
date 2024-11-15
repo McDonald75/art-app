@@ -5,15 +5,10 @@ import { useNavigate } from 'react-router-dom';
 const AddArt = ({ arts, setArts }) => {
   const navigate = useNavigate();
 
-  const handleAddArt = (newArt) => {
-    setArts([...arts, { id: Date.now(), ...newArt }]);
-    navigate('/');
-  };
-
   return (
-    <div>
+    <div className='edit-art-container'>
       <h2>Add New Art</h2>
-      <ArtForm onSubmit={handleAddArt} />
+      <ArtForm />
     </div>
   );
 };
