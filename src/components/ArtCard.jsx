@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ArtCard = ({ art }) => { 
+  const navigate = useNavigate()
   const onEdit = ()=>{
-
+    navigate('/edit')
   }
   const onDelete = ()=>{
 

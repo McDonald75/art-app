@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [error, setError] = useState(false)
 
   useEffect(()=>{
-    fetch('https://json-server-zd0r.onrender.com/').then(res=>{
+    fetch('https://json-server-zd0r.onrender.com/arts').then(res=>{
       if(!res.ok) throw new Error("Art not fetch error")
         return res.json()
     }).then(res=>{
