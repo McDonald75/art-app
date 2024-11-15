@@ -7,16 +7,19 @@ import Navbar from './components/Navbar';
 import './styles.css';
 
 function App() {
-
   const [arts, setArts] = useState([]);
+  const [error, setError] = useState(false)
+
   useEffect(()=>{
-    fetch('').then(res=>{
+    fetch('http://localhost:8080/arts').then(res=>{
       if(!res.ok) throw new Error("Art not fetch error")
         return res.json()
     }).then(res=>{
-      console.log(res)
+      console.log(arts)
+      setArts(res)
     }).catch(err=>{
-      console.log(err)
+      setError(true)
+      alert(err.message)
     })
   },[])
 
