@@ -23,18 +23,13 @@ function App() {
     })
   },[])
 
-  
-  useEffect(() => {
-    localStorage.setItem('arts', JSON.stringify(arts));
-  }, [arts]);
-
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Dashboard arts={arts} setArts={setArts} />} />
-        <Route path="/add" element={<AddArt arts={arts} setArts={setArts} />} />
-        <Route path="/edit/:id" element={<EditArt arts={arts} setArts={setArts} />} />
+        <Route path="/" element={<Dashboard />
+        <Route path="/add" element={<AddArt />
+        <Route path="/edit/:id" element={<EditArt />
       </Routes>
     </Router>
   );
