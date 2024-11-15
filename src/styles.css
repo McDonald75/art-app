@@ -1,21 +1,12 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
   }
   
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  .art-card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
   }
   
   .art-card img {
@@ -28,10 +19,16 @@ body {
     margin: 5px;
     cursor: pointer;
   }
-  
+
+  .header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
 .search-bar {
-    margin: 10px 0;
     text-align: center;
+    width: 50%;
   }
   
   .search-bar input {
@@ -52,36 +49,42 @@ body {
   .navbar a {
     color: white;
     text-decoration: none;
-    
+
   }
   
   .navbar a:hover {
     text-decoration: underline;
   }
   
-.art-card {
-  border: 1px solid #ddd;
-  padding: 16px;
-  border-radius: 8px;
-  width: 300px;
-  margin: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-
+  .art-card {
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    width: 250px;
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  
 .art-image {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;  
-  object-fit: cover;    
-  border-radius: 4px;
-  margin-bottom: 12px;
+  height:200px;
 }
 
 
 .art-details {
   margin-bottom: 12px;
+  text-align: left;
+  line-height: 10px;
+  font-size: 14px;
 }
 
 

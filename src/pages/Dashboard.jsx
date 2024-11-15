@@ -41,8 +41,10 @@ const Dashboard = () => {
   return (
     <div className="container">
       <h2>Art Dashboard</h2>
+      <div className='header'>
       <button onClick={() => navigate('/add')}>Add New Art</button>
       <SearchBar/>
+      </div>
       <ArtList />
     </div>
   );
