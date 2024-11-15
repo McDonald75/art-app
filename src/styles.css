@@ -94,3 +94,30 @@ body {
   font-size: 14px;
 }
 
+.edit-art-container h2{
+  margin-left: 30%;
+
+}
+  .edit-art-container form{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 30%;
+}
+.edit-art-container form div{
+  display: flex;
+  align-items: center;
+}
+.edit-art-container form div p{
+  line-height: 5px;
+  width: 100px;
+}
+.edit-art-container form div input{
+  height: 25px;
+}
+.edit-art-container form button{
+  width: 150px;
+  margin-top: 50px;
+}
+
+
