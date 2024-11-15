@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Context } from './context';
 
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState()
+    const {setArts, originalArts} = useContext(Context)
     const onSearchChange = (value)=>{
-      console.log(value)
+      const newArts = originalArts.filter(art=>art.name.toLowerCase().includes(value.toLowerCase()))
+      setArts(newArts)
 
     }
  return( <div className="search-bar">
