@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ArtList from '../components/ArtList';
 import SearchBar from '../components/SearchBar';
 import { useNavigate } from 'react-router-dom';
+import { Context } from '../components/context';
 
-const Dashboard = ({ arts, setArts }) => {
+const Dashboard = () => {
+  const {arts, setArts, originalArts, setOriginalArts} = useContext(Context)
+  const [error, setError] = useState(false)
+
+  useEffect(()=>{
+    fetch('http://localhost:8080/arts').then(res=>{
+      if(!res.ok) throw new Error("Art not fetch error")
+        return res.json()
+    }).then(res=>{
+      console.log(arts)
+      setArts(res)
+      setOriginalArts(res)
+    }).catch(err=>{
+      setError(true)
+      alert(err.message)
+    })
+  },[])
+
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
@@ -24,8 +42,8 @@ const Dashboard = ({ arts, setArts }) => {
     <div className="container">
       <h2>Art Dashboard</h2>
       <button onClick={() => navigate('/add')}>Add New Art</button>
-      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-      <ArtList arts={filteredArts} onEdit={handleEdit} onDelete={handleDelete} />
+      <SearchBar/>
+      <ArtList />
     </div>
   );
 };
