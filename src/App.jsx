@@ -8,10 +8,17 @@ import './styles.css';
 
 function App() {
 
-  const [arts, setArts] = useState(() => {
-    const savedArts = localStorage.getItem('arts');
-    return savedArts ? JSON.parse(savedArts) : [];
-  });
+  const [arts, setArts] = useState([]);
+  useEffect(()=>{
+    fetch('').then(res=>{
+      if(!res.ok) throw new Error("Art not fetch error")
+        return res.json()
+    }).then(res=>{
+      console.log(res)
+    }).catch(err=>{
+      console.log(err)
+    })
+  },[])
 
   
   useEffect(() => {
