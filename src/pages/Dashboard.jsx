@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Context } from '../components/context';
 
 const Dashboard = () => {
-  const {arts, setArts, originalArts, setOriginalArts} = useContext(Context)
+  const {arts, setArts, originalArts, refresh, setRefresh, setOriginalArts} = useContext(Context)
   const [error, setError] = useState(false)
 
   useEffect(()=>{
@@ -16,11 +16,13 @@ const Dashboard = () => {
       console.log(arts)
       setArts(res)
       setOriginalArts(res)
+      
     }).catch(err=>{
       setError(true)
       alert(err.message)
     })
-  },[])
+    return setRefresh(false)
+  },[refresh])
 
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();

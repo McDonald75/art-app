@@ -4,7 +4,7 @@ import { Context } from './context';
 
 const ArtList = () => {
   const {arts} = useContext(Context)
- return( <div>
+ return( <div className='artList'>
     {arts.map((art) => (
       <ArtCard key={art.id} art={art} />
     ))}

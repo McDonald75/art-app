@@ -4,11 +4,20 @@ body {
   }
   
   .container {
-    max-width: 800px;
+    /* max-width: 800px; */
+
     margin: 0 auto;
     padding: 20px;
   }
-  
+  .artList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
   .art-card img {
     max-width: 100px;
     border-radius: 5px;
@@ -24,7 +33,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    /* gap: 10px; */
   }
 .search-bar {
     text-align: center;
