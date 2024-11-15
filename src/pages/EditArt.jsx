@@ -13,7 +13,8 @@ const EditArt = () => {
   const [name, setName] = useState(artToEdit ? artToEdit.name : '');
   const [author, setAuthor] = useState(artToEdit ? artToEdit.author : '');
   const [price, setPrice] = useState(artToEdit ? artToEdit.price : '');
-  const [imageLink, setImageLink] = useState(artToEdit ? artToEdit.imageLink : '');
+  const [imageLink, setImageLink] = useState(artToEdit ? artToEdit.image : '');
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!artToEdit) {
@@ -24,7 +25,34 @@ const EditArt = () => {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-
+    setLoading(true)
+    fetch(`https://json-server-zd0r.onrender.com/arts/${id}`, {
+      method:'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id,
+        price,
+        name,
+        author,
+        image:imageLink
+      }),
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json(); 
+    })
+    .then(data => {
+      alert(`art ${id} was updated!`)
+      navigate('/')
+    })
+    .catch(error => {
+      alert(error.message)
+    }).finally(()=>{
+      setLoading(false)
+    });
   };
 
   return (
@@ -57,6 +85,8 @@ const EditArt = () => {
           <input type="url" value={imageLink} onChange={(e) => setImageLink(e.target.value)} required />
         </div>
         <button type="submit">Update Artwork</button>
+      {loading && <p fontSize='12px'>loading...</p>}
+
       </form>
     </div>
   );
