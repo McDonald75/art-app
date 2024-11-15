@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Context } from '../components/context';
 
-const EditArt = ({ arts, setArts }) => {
+const EditArt = () => {
   const { id } = useParams();
+  const {arts} = useContext(Context)
   const navigate = useNavigate();
 
   

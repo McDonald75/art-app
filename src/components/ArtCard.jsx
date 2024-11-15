@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 const ArtCard = ({ art }) => { 
   const navigate = useNavigate()
-  const onEdit = ()=>{
-    navigate('/edit')
+  const onEdit = (id)=>{
+    navigate(`edit/${id}`)
   }
   const onDelete = ()=>{
 
@@ -27,7 +27,7 @@ const ArtCard = ({ art }) => {
       </a>
     </div>
     <div className="art-card-buttons">
-      <button onClick={() => onEdit(art)}>Edit</button>
+      <button onClick={() => onEdit(art.id)}>Edit</button>
       <button onClick={() => onDelete(art.id)}>Delete</button>
     </div>
   </div>
